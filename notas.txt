@@ -1,0 +1,59 @@
+https://github.com/ricardoandre97/jenkins-resources
+
+¿Qué es la integración continua (CI)?
+La integración continua o Continuous Integration (CI) es una práctica 
+habitual en desarrollo de software que consiste en integrar 
+frecuentemente mejoras en el código de un proyecto una vez han 
+sido validadas, normalmente varias veces al día, con el objetivo 
+de detectar errores lo antes posible. 
+Cada cambio que realiza un desarrollador 
+(ya sea una resolución de un bug, la creación de una nueva 
+funcionalidad, etc.) se comprueba compilando el código fuente y 
+obteniendo un ejecutable (llamado build). Si es validado, 
+será incorporado al código fuente y desplegado. 
+
+
+que es Jenkins:
+
+Jenkins es un servidor open source para la integración continua y desarollo continuo. (CI/CD)
+Es una herramienta que se utiliza para compilar y probar proyectos 
+de software de forma continua, lo que facilita a los desarrolladores 
+integrar cambios en un proyecto y entregar nuevas versiones a los 
+usuarios. Escrito en Java, es multiplataforma y accesible mediante 
+interfaz web. Es el software más utilizado en la actualidad 
+para este propósito.
+
+¿Qué se puede hacer con Jenkins?
+Con Jenkins podemos automatizar multitud de tareas que nos ayudarán a 
+reducir el time to market de nuestros productos digitales o 
+de nuevas versiones de ellos. Concretamente, con esta herramienta 
+podemos:
+
+- Automatizar la compilación y testeo de software.
+- Notificar a los equipos correspondientes la detección de errores.
+- Desplegar los cambios en el código que hayan sido validados.
+- Hacer un seguimiento de la calidad del código y de la cobertura de las pruebas.
+- Generar la documentación de un proyecto.
+
+Podemos ampliar las funcionalidades de Jenkins a través de 
+múltiples plugins creados por la comunidad, diseñados para 
+ayudarnos en centenares de tareas, a lo largo de las diferentes 
+etapas del proceso de desarrollo.
+
+Como funciona Jenkins:
+
+- Un desarrollador hace un commit de código en el repositorio del código fuente. 
+- El servidor de Jenkins hace comprobaciones periódicas para detectar cambios en el repositorio.
+- Poco después del commit, Jenkins detecta los cambios que se han producido en el código fuente. Compila el código y prepara un build. Si el build falla, envía una notificación al equipo en cuestión. Si resulta exitoso, lo despliega en el servidor de testeo.
+- Después de la prueba, Jenkins genera un feedback y notifica al equipo el build y los resultados del testeo.
+- Jenkins continúa revisando el repositorio frecuentemente y todo el proceso se repite.
+
+instalar jenkins (docker)
+# sudo systemctl enabled docker
+# sudo usermod -aG docker (whoami)
+# install docker-compose
+- descargar docker image jenkins
+-- docker pull Jenkins/jenkins
+- docker-compose up -d 
+-- docker logs -f jenkins (password de la instalacion para acceder a jenkins)
+
