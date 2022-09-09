@@ -55,5 +55,23 @@ instalar jenkins (docker)
 - descargar docker image jenkins
 -- docker pull Jenkins/jenkins
 - docker-compose up -d 
+- chown 1000:1000 jenkins_home -R (permisos si no los tiene)
 -- docker logs -f jenkins (password de la instalacion para acceder a jenkins)
+
+Uso de jenkins basico:
+
+- crear: new job
+- build/shell:echo hola mundo
+- ejecutar ahora/console output
+
+ejecutar un script en jenkins
+
+- docker cp cript.sh jenkins:/tmp/cript.sh
+- configure/ recent changes/build/sheel
+
+añadir parametros:
+
+- general/proyecto parametrizado/añadir parametro
+- build whit parameter (para editarlos)
+- choise parameter:(lista de parametros)
 
