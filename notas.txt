@@ -75,3 +75,55 @@ añadir parametros:
 - build whit parameter (para editarlos)
 - choise parameter:(lista de parametros)
 
+añadir plugins: 
+
+- plugin manager
+- buscar
+
+integrar docker ssh y jenkins
+
+- entrar al contenedor
+- ssh
+- manager Jenkins:configure system:ssh remote host(port 22,credenciales)
+# job build execute shell romote using ssh
+# S3 bucket: services:s3:crear 
+# AIM identity:create user:programatic access: attach policy directly:amazon full access:descargar .csv
+# configurar variables aws: export AWS_ACCSESS_KEY_ID=KHKSJJLKSLJLUUSFAFLOOPS(.csv)/export AWS_ACCSESS_KEY=secret key
+# aws s3 cp temp/db.sql s3://jenkins-mysql-backup(s3 name)/db.sql
+# jenkins:credentials:add credential:secret text:(mysql_password)(AWS_Secret)  
+
+proyecto con AWS
+
+- nuevo projecto: estilo libre: proyecto parametrizado
+- string parametro: MYSQL_HOST:db_host / DATABASE_NAME:testdb / AWS_BUCKET_NAME: amazon s3 nombre 
+- build enviroment: use secret text or file:secret text: BACKUP mysql:MYSQL_PASSWORD / credential AWS:AWS_SECRET
+# añadir cada parametro necesario 
+- build:ejecutar shell desde ssh: /temp/backup_and_upload.sh $ MYSQL_HOST/$MYSQL_PASSWORD/$DATABASE_NAME(todos los parametros)
+
+Jenkins con ansible
+
+- cp ../fedora/remote-key .
+- nano host
+- create playbook: ansible-playbook -i host playbook.yaml
+- jenkins manager:plugin:ansible
+- new item:libre:build:invoke ansible playbook:path playbook/playbook.yml:file host list:path host
+- crear parametro: proyecto parametrizado:string parametro:ANSIBLE_MSG: parametro extra:MSG:ANSIBLE_MSG
+- plugin:ansicolor:build enviroment:color ANSI output
+- 
+
+Jenkins con seguridad
+-
+
+Jenkins Pipelines:
+
+- Jenkins Pipeline es un conjunto de complementos que 
+admite la implementación e integración de canalizaciones de
+entrega continua en Jenkins.
+Pipeline proporciona un conjunto extensible de herramientas para 
+modelar canalizaciones de entrega de simples a complejas 
+"como código" a través de la sintaxis del lenguaje 
+específico de dominio (DSL) de Pipeline.
+- https://www.jenkins.io/doc/book/pipeline/
+- instalar plugin:pipeline
+- newitem:pipeline:pipeline script:build now 
+- 
