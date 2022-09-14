@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    stages {
+        stage('Test') {
+            steps {
+                sh 'echo "fail"; exit 1'
+            }
+        }       
+    }
+    post{
+	always{
+	    echo 'i will alweys get execute :D'
+	}
+	success{
+	    echo 'i will only get execute if this success'
+	}
+	failure{
+	    echo 'i will only get execute if this fails'
+	}
+	unestable{
+	    echo 'i will only get execute if this unestable'
+	}
+     }
+}
