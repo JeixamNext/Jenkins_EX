@@ -114,6 +114,36 @@ Jenkins con ansible
 Jenkins con seguridad
 -
 
+jenkins con maven:
+
+- Apache Maven es una herramienta de comprensión y gestión de proyectos 
+de software. Basado en el concepto de un modelo de objetos 
+de proyecto (POM), Maven puede administrar la construcción, 
+los informes y la documentación de un proyecto desde 
+una pieza central de información.
+
+- instalar plugin maven:maven:maven integration/instalar git
+# clonar repositorio git: new-item:git
+# configuar jenkins:global configuracion:maven 
+#configurar proyecto:build:ejecutar tareas maven: version creada:funcion del codigo(build)
+- deploy jar:build:execute sheel:
+- build:publish JUNIT test result report:post-bild-actions:tarjet/surefire-reports/* .xml
+
+
+CI/CD
+
+- https://www.infoworld.com/article/3271126/ci-cd/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
+
+
+Jenkins y email aws
+
+- plugins:mailer
+- aws:serviciod:ses(simple email server):email addresses:loquesea@.gmail
+- configure system:email notification:SMTP amazon:credentials amazon SMTP
+- aws: SES home:SMTP settings:server name:create credentials 
+- configure system:email notification:puerto (SMTP settings) 
+# post-build:email notification (notificaciones dentro de un proyecto)
+
 Jenkins Pipelines:
 
 - Jenkins Pipeline es un conjunto de complementos que 

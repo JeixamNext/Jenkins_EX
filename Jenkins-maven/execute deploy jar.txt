@@ -1,0 +1,7 @@
+# build:execute sheel:command
+
+echo '''''''''''''''''''''''''''''''
+
+java -jar var/jenkins_home/workspace/maven-job/targect/my-app-1.0-$NAP$HOT.jar
+
+echo '''''''''''''''''''''''''''''''

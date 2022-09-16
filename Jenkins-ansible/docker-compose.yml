@@ -4,17 +4,17 @@ services:
     container_name: jenkins
     image: jenkins-ansible
     build:
-     context: jenkins-ansible
+     context: .
     ports:
       - "8080:8080"
     restart: "always"
     volumes: 
       - "$PWD/jenkins_home:/var/jenkins_home"
   remote_host:
-    container_name: remote host
+    container_name: remote_host
     image: remote_host
     build:
-     context: centos7
+     context: .
     networks:
       - net
   db_host:

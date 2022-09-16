@@ -12,7 +12,7 @@ services:
     container_name: remote host
     image: remote_host
     build:
-     context: centos7
+     context: centos7 # contexto donde se encuentra e ira a buscar el archivo
     networks:
       - net
   db_host:
