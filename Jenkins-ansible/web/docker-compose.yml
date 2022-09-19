@@ -1,0 +1,37 @@
+version: '3'
+services: 
+  jenkins:
+    container_name: jenkins
+    image: jenkins-ansible
+    build:
+     context: .
+    ports:
+      - "8080:8080"
+    restart: "always"
+    volumes: 
+      - "$PWD/jenkins_home:/var/jenkins_home"
+  remote_host:
+    container_name: remote_host
+    image: remote_host
+    build:
+     context: .
+    networks:
+      - net
+  db_host:
+    container_name: db
+    image: mysql:5.7
+    environment: 
+      - "MYSQL_ROOT_PASSWORD=1234"
+    volumes:
+      - "$PWD/db_data:/var/lib/mysql"
+    networks:
+      - net
+  web:
+    container_name: web
+    image: ansible_web
+    build:
+     context: .
+    ports:
+      - "80:84"
+networks:
+  net: 

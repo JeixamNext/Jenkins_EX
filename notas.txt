@@ -109,10 +109,21 @@ Jenkins con ansible
 - new item:libre:build:invoke ansible playbook:path playbook/playbook.yml:file host list:path host
 - crear parametro: proyecto parametrizado:string parametro:ANSIBLE_MSG: parametro extra:MSG:ANSIBLE_MSG
 - plugin:ansicolor:build enviroment:color ANSI output
-- 
 
 Jenkins con seguridad
--
+- manager jenkins:global security
+- plugins:role:role basado en estrategia de autorizacion
+- manager jenkins:global security:autorizacion:autorizacion basada en rol
+- manager users:create user/manager jenkins:global security:security realm:LDAP
+- manager jenkins: manage and assign roles:asignar roles:add rol y asignar rol
+
+# modificar jenkins url:(dns)
+- configuer system
+- jenkins location: http://jenkins.local:8080/
+# CRSF proteccion contra ataques DOS
+- https://jenkins.io/doc/upgrade-guide/2.176/#SECURITY-626
+- Install a plugin named Strict Crumb Issue
+- Manage Jenkins: Configure Global Security:CSRF Protection:Strict Crumb Issuer
 
 jenkins con maven:
 
@@ -130,10 +141,34 @@ una pieza central de información.
 - build:publish JUNIT test result report:post-bild-actions:tarjet/surefire-reports/* .xml
 
 
+Jenkins and gitlab:
+- https://docs.gitlab.com/ee/install/docker.html
+- crear grupo/crear proyecto
+- funciona como git apuntando al repo creado en docker 
+- jenkins:job:sorce code management:git:http://web_gitlab:80/jenkins/reposotorio.git (nombre del servicio docker y perto interno: 8090:80)
+# introducir las credenciales de gilab en jenkins
+- git hooks: 
+# Los ganchos de Git son scripts de shell que se ejecutan 
+automáticamente antes o después de que Git ejecute un comando 
+importante como Commit o Push. Para que un Hook funcione,
+es necesario otorgarle al sistema Unix los permisos de ejecución. 
+Mediante el uso de estos scripts, podemos automatizar ciertas cosas.
+Los Hooks se almacenan en la carpeta .git/hooks/ de cada proyecto 
+clonado, o en un repositorio local recién creado. 
+Para activar un hook, solo es necesario crear 
+un archivo y guardarlo en la carpeta .git/hooks/. 
+- https://www.atlassian.com/git/tutorials/git-hooks
+
 CI/CD
 
 - https://www.infoworld.com/article/3271126/ci-cd/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
 
+
+Jenkins and DSL:
+
+- https://plugins.jenkins.io/job-dsl/
+- Plugins:job dsl 
+- 
 
 Jenkins y email aws
 

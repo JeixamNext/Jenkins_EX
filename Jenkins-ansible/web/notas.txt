@@ -1,0 +1,2 @@
+# ansible -m ping -i host web1 
+para ver si ansible responde y el servicio web funciona
