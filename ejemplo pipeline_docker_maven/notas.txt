@@ -1,0 +1,4 @@
+ejemplo de CI/CD atraves de jenkins docker y maven.
+
+# instala docker dentro de docker para usar jenkins con docker
+# Dockerfile (paso 1)

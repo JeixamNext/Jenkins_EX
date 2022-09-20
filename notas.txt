@@ -168,7 +168,9 @@ Jenkins and DSL:
 
 - https://plugins.jenkins.io/job-dsl/
 - Plugins:job dsl 
-- 
+- administrar jenkins:aprobar sripts (para que se pueda ejecutar la semilla)
+- las modificaciones deben hacerse en la semilla 
+- triggers: acciones programadas 
 
 Jenkins y email aws
 
