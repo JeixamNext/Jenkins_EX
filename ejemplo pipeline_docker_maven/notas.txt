@@ -2,3 +2,32 @@ ejemplo de CI/CD atraves de jenkins docker y maven.
 
 # instala docker dentro de docker para usar jenkins con docker
 # Dockerfile (paso 1)
+# docker-compose up -d (paso 2)
+# docker pull maven:3-alpine (paso 3)
+# docker run -ti -v $PWD/java-app:/app maven:3-alpine sh (paso 4)
+# mvn package (cd app)(paso 5)
+# docker run --rm -ti -v $PWD/java-app:/app -v /root/.m2/:/root/.m2 maven:3-alpine sh (paso 5.1) 
+(contenedor temporal)
+# mvn package (cd app) (paso 5.2)
+# docker run --rm -ti -v $PWD/java-app:/app -v /root/.m2/:/root/.m2 -w /app maven:3-alpine sh (paso 6)
+# docker run --rm -v $PWD/java-app:/app -v /root/.m2/:/root/.m2 -w /app maven:3-alpine mvn -b -DskipTests clean package 
+(usar script maven y pasarle parametro mvn -b -DskipTests clean package) 
+(construira el .jar)
+(/.maven.sh mvn -B -DskipTests clean package)(java-app/target)
+# docker build -f Dockerfile-java -t alph-jdk . (paso 7)
+# export BULD_TAG=1 (paso 8)
+# docker compose -f dockercompose-build.yml build (creara una version por cada BULD_TAG)
+(usar script build) 
+(./jenkins/build/build.sh)
+# docker run --rm -v $PWD/java-app:/app -v /root/.m2/:/root/.m2 -w /app maven:3-alpine mvn alph-jdk
+(test)
+# ./jenkins/test/mvn.sh mvn test (alph-jdk)
+# push: (usar una cuenta dockerhub)(repositorio privado)(maven-project)
+## docker login / docker tag app:2 cuenta/maven-project:2
+## docker push cuenta/maven-project:2
+## docker pull cuenta/maven-project:2
+(usar script )
+# ./push.sh jeixamNext (export pass,tag,image,user)
+# crear proyecto en jenkins (9)
+# 
+
