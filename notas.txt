@@ -1,4 +1,18 @@
 https://github.com/ricardoandre97/jenkins-resources
+https://github.com/macloujulian/cursojenkins
+https://www.digitalocean.com/
+https://www.vagrantup.com/
+https://www.osboxes.org/ubuntu/
+
+# ip estatica vierual box:
+
+- configuracion:NAT
+- herramientas RED
+- configuracion: adaptador 2: solo anfitrion 
+- sudo nano /ect/network/interfaces
+- sudo install ifupdown
+- ifup adaptador_red 
+- reboot
 
 ¿Qué es la integración continua (CI)?
 La integración continua o Continuous Integration (CI) es una práctica 
@@ -44,7 +58,9 @@ Como funciona Jenkins:
 
 - Un desarrollador hace un commit de código en el repositorio del código fuente. 
 - El servidor de Jenkins hace comprobaciones periódicas para detectar cambios en el repositorio.
-- Poco después del commit, Jenkins detecta los cambios que se han producido en el código fuente. Compila el código y prepara un build. Si el build falla, envía una notificación al equipo en cuestión. Si resulta exitoso, lo despliega en el servidor de testeo.
+- Poco después del commit, Jenkins detecta los cambios que se han producido en el código fuente. 
+  Compila el código y prepara un build. Si el build falla, envía una notificación al equipo en cuestión. 
+  Si resulta exitoso, lo despliega en el servidor de testeo.
 - Después de la prueba, Jenkins genera un feedback y notifica al equipo el build y los resultados del testeo.
 - Jenkins continúa revisando el repositorio frecuentemente y todo el proceso se repite.
 
@@ -58,11 +74,19 @@ instalar jenkins (docker)
 - chown 1000:1000 jenkins_home -R (permisos si no los tiene)
 -- docker logs -f jenkins (password de la instalacion para acceder a jenkins)
 
+mastro esclavo:
+
+- jenkins:maestro
+- maquinas:nodo o esclavo
+
 Uso de jenkins basico:
 
 - crear: new job
 - build/shell:echo hola mundo
 - ejecutar ahora/console output
+
+# en disparadores de ejecucion se puede ejecutar periodicamente o 
+un github hook trigger cuando se hace un commit.
 
 ejecutar un script en jenkins
 

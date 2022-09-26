@@ -28,6 +28,6 @@ ejemplo de CI/CD atraves de jenkins docker y maven.
 ## docker pull cuenta/maven-project:2
 (usar script )
 # ./push.sh jeixamNext (export pass,tag,image,user)
-# crear proyecto en jenkins (9)
-# 
+# crear proyecto en jenkins (paso 9)
+# definir PASS como credencial en jenkins (paso 9.1)
 

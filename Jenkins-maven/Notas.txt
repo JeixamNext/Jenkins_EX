@@ -1,0 +1,35 @@
+- plugin github
+- plugin maven 
+- administar jenkins: global tools gonfiguration:mave: nombre 
+# https://github.com/macloujulian/simple-java-maven-app
+- crear job
+- configuracion:build:ejecutar tareas maven: nombre-maven
+- goles:(comando que se ejecutara)(forma manual)
+# jenkinsfile: build 
+# el .jar construido ira a var/jenkins_home/workspaces (projecto y target)
+
+pruebas unitarias: (forma manual)
+
+- src/test (repositorio)
+- goles: test
+
+ver los resultados de test en jenkins:
+
+- configuracion: acciones para ejecutar despues: publicar resultados test jUnit
+- target/surefire-reports/*.xml
+- ultimos resultados de test 
+
+ejecutar la aplicacion:
+
+- build:shell:
+###############################################################################
+echo "ejecutado la aplicacion"
+
+java -jar /var/jenkins_home/worspaces/"java-app con maven"(nombre del job)/target/my-app-1.0-SNAPSHOT.jar
+
+
+###############################################################################
+(archivar los artifacts)
+- configuracion: acciones para ejecutar despues:guardar los archivos generados: target/*.jar (archivar artifact)
+
+

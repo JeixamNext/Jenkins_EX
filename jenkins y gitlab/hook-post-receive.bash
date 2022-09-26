@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# get branch name for head
-
-if ! [-t 0]; then
-   read -a ref
-fi
-ifs='/' read -ra REF <<< "${ref[2]}"
-branch="${ref[2]}"
-
-if [$branch="master"]; then 
-crumb=$(curl -u "jenkins:1234" -s 'http://jemkins:8080/Crubissuer,":",//crumb)')
-curl -u "jenkins:1234" -H $scrumb -X POST http://jemkins:8080/job/trabajo/build?delay=0sec
-
-	if [$? -eq 0]; then
-	  echo "++++ OK"
-	else 
-          echo "++++ error"
-        fi
+if ! [ -t 0 ]; then
+	read -a ref
 fi
 
+
+IFS='/' read -ra REF <<< "${ref[2]}"
+branch="${REF[2]}"
+
+if [ $branch == "master" ]; then
+	crumb=$(curl -u "jenkins:1234" -s 'http://jenkins:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)')
+	curl -u "jenkins:1234" -H "$crumb" -X POST http://jenkins:8080/job/maven-job/build?delay=0sec
+
+	if [ $? -eq 0 ]; then
+		echo "*** Ok"
+	else
+		echo "*** Error"
+	fi
+
+fi
