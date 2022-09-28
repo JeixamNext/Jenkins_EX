@@ -1,0 +1,27 @@
+Jenkins DSL: crea y modifica jobs
+
+# se describe el job usando Grooby base sript 
+
+- https://plugins.jenkins.io/job-dsl/
+- https://jenkinsci.github.io/job-dsl-plugin/#
+- Plugins:job dsl 
+- job:build:proceso job DSL
+- administrar jenkins:aprobar sripts (para que se pueda ejecutar la semilla)
+- las modificaciones deben hacerse en la semilla 
+- triggers: acciones programadas 
+
+
+Usar un DSL con SCM
+
+- job:git(donde esta el archivo groovy)
+- build:jobDSL:./DSL_EjemploCompleto.groovy (ruta donde este)
+
+contruir mediante un push
+
+- administar jenkins:configuracion sistema:avanzado:especificar hook url
+- github:settings:webhooks:add:playload url:direcion
+- jenkins:trigger
+##########################################
+githubPush()
+#########################################
+

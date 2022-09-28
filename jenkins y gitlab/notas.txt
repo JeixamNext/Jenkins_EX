@@ -1,0 +1,17 @@
+Jenkins and gitlab de forma local:
+- https://docs.gitlab.com/ee/install/docker.html
+- crear grupo/crear proyecto
+- funciona como git apuntando al repo creado en docker 
+- jenkins:job:sorce code management:git:http://web_gitlab:80/jenkins/reposotorio.git (nombre del servicio docker y perto interno: 8090:80)
+# introducir las credenciales de gilab en jenkins
+- git hooks: 
+# Los ganchos de Git son scripts de shell que se ejecutan 
+automáticamente antes o después de que Git ejecute un comando 
+importante como Commit o Push. Para que un Hook funcione,
+es necesario otorgarle al sistema Unix los permisos de ejecución. 
+Mediante el uso de estos scripts, podemos automatizar ciertas cosas.
+Los Hooks se almacenan en la carpeta .git/hooks/ de cada proyecto 
+clonado, o en un repositorio local recién creado. 
+Para activar un hook, solo es necesario crear 
+un archivo y guardarlo en la carpeta .git/hooks/. 
+- https://www.atlassian.com/git/tutorials/git-hooks

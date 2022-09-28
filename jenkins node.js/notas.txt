@@ -1,0 +1,21 @@
+- https://github.com/JeixamNext/nodejsapp_jenkins
+
+# jenkins administrar plugins nodejs
+
+- global tools configuration:nombre
+- crear job:origen de datos: git
+- build:shell:npm install 
+- provide node folder to PATH
+
+empaquetar la app con docker en jenkins:
+
+- plugins: docker(cloudbees docker build and publish)
+- build:dockerbuild an publish
+- nombre repositorio/app
+- introducir registry crendencial dockerhub
+- contruir job 
+
+# docker pull jeixamsave/nodejsapp 
+# docker run -p 3000:3000 -d --name nodejsapp jeixamsave/nodejsapp 
+# curl localhost:3000
+

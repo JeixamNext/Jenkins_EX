@@ -1,0 +1,3 @@
+dentro del contenedor de docker 
+
+chown 1000:1000 /var/run/docker.sock

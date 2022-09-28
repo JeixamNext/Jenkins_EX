@@ -135,6 +135,7 @@ Jenkins con ansible
 - plugin:ansicolor:build enviroment:color ANSI output
 
 Jenkins con seguridad
+
 - manager jenkins:global security
 - plugins:role:role basado en estrategia de autorizacion
 - manager jenkins:global security:autorizacion:autorizacion basada en rol
@@ -148,6 +149,11 @@ Jenkins con seguridad
 - https://jenkins.io/doc/upgrade-guide/2.176/#SECURITY-626
 - Install a plugin named Strict Crumb Issue
 - Manage Jenkins: Configure Global Security:CSRF Protection:Strict Crumb Issuer
+# proteger a jenkins con el fireware
+# utilizar directorio de usuarios avanzados LDAP SAML
+# https://www.onelogin.com/
+# https://temp-mail.org/es/
+
 
 jenkins con maven:
 
@@ -183,18 +189,6 @@ Para activar un hook, solo es necesario crear
 un archivo y guardarlo en la carpeta .git/hooks/. 
 - https://www.atlassian.com/git/tutorials/git-hooks
 
-CI/CD
-
-- https://www.infoworld.com/article/3271126/ci-cd/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
-
-
-Jenkins and DSL:
-
-- https://plugins.jenkins.io/job-dsl/
-- Plugins:job dsl 
-- administrar jenkins:aprobar sripts (para que se pueda ejecutar la semilla)
-- las modificaciones deben hacerse en la semilla 
-- triggers: acciones programadas 
 
 Jenkins y email aws
 
@@ -204,6 +198,24 @@ Jenkins y email aws
 - aws: SES home:SMTP settings:server name:create credentials 
 - configure system:email notification:puerto (SMTP settings) 
 # post-build:email notification (notificaciones dentro de un proyecto)
+
+CI/CD
+
+- https://www.infoworld.com/article/3271126/ci-cd/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
+
+
+# escribir completamente en codigo un JOB y guardarlo en SCM
+# existen dos tipos DSL y pipelines
+
+Jenkins and DSL: crea y modifica jobs
+
+- https://plugins.jenkins.io/job-dsl/
+- Plugins:job dsl 
+- administrar jenkins:aprobar sripts (para que se pueda ejecutar la semilla)
+- las modificaciones deben hacerse en la semilla 
+- triggers: acciones programadas 
+
+
 
 Jenkins Pipelines:
 
@@ -217,4 +229,7 @@ específico de dominio (DSL) de Pipeline.
 - https://www.jenkins.io/doc/book/pipeline/
 - instalar plugin:pipeline
 - newitem:pipeline:pipeline script:build now 
-- 
+
+
+
+
