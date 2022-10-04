@@ -1,0 +1,15 @@
+- https://github.com/spring-guides/gs-gradle
+- https://github.com/macloujulian/gs-gradle
+
+plugins:github branch source plugin
+- nuevo proyecto:organization folder:project:git:credencial
+# github:settings:developer:tokens
+contraseña:token
+# apareceran todos los proyectos que tengan un jenkinsfile
+# mkdir gradle
+# chown 1000:1000 /jenkins/jenkins_home/.gradle
+
+plugins:bitbucket branch source plugin
+- nuevo proyecto:organization folder:project:bitbucket:equipo:credencial
+# bitbucket:allworkspaces:workspace:settings:id
+# personal settings:app paswords:create app password

@@ -1,0 +1,9 @@
+jenkins:plugins:docker pipeline
+
+# original: https://github.com/macloujulian/nodejspipeline
+
+jenkins:job:pipeline
+
+- git: https://github.com/JeixamNext/nodejspipeline
+- pipeline script:jenkinsfile
+

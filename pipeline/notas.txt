@@ -1,0 +1,23 @@
+Jenkins Pipelines:
+
+- Jenkins Pipeline es un conjunto de complementos que 
+admite la implementación e integración de canalizaciones de
+entrega continua en Jenkins.
+Pipeline proporciona un conjunto extensible de herramientas para 
+modelar canalizaciones de entrega de simples a complejas 
+"como código" a través de la sintaxis del lenguaje 
+específico de dominio (DSL) de Pipeline.
+-Build/test/deploy
+
+que diferencia Pipeline de DSL:
+- dsl crea jobs mediante codigo(seed)
+- pipeline: crea un job que se encarga del ciclo completo de un proyecto 
+- se puede usar DSL para crear Pipeline
+
+como usar: 
+- https://www.jenkins.io/doc/book/pipeline/
+- instalar plugin:pipeline
+- newitem:pipeline:pipeline script:build now 
+
+
+

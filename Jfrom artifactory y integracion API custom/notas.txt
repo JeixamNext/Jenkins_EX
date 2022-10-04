@@ -1,0 +1,17 @@
+https://jfrog.com/
+
+Jfrom Artifactory alamacena artifacts de una compilacion
+
+plugins: jfrog artifactory 
+
+jfrog:quick Setup:gradle
+- artifact
+- identidad y acceso:grupos:crear
+- users:nuevo
+- user_profile:generar clave api
+configurar jenkins:configurar sistema:Jfrog:credenciales
+
+Integracion api:
+
+- plugins: http Request Plugin
+- usar una clave api (OAuth consumer en bitbucket)

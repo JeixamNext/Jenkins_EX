@@ -1,0 +1,19 @@
+sonarqube inspeciona constantemente el sofware 
+de un proyecto en calidad de codigo.
+
+informa de:
+- errores 
+- vilnerabilidades
+- tiempos
+- cobertura de codigo 
+
+docker compose up -d 
+
+# systemctl -w vm.max_map_count=262144 (si falla sonar por la memoria)
+# admin:admin predeterminada de sonarquebe
+
+para usarlo en jenquins:
+
+- plugins:sonarqube
+
+sonarqube:A:my count:security:generar token
