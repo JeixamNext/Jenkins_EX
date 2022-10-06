@@ -9,7 +9,9 @@ informa de:
 
 docker compose up -d 
 
-# systemctl -w vm.max_map_count=262144 (si falla sonar por la memoria)
+docker compose logs -f contenedor
+
+# sysctl -w vm.max_map_count=262144 (si falla sonar por la memoria) (o añadirlo a /ect/sysctl.conf)
 # admin:admin predeterminada de sonarquebe
 
 para usarlo en jenquins:
@@ -17,3 +19,7 @@ para usarlo en jenquins:
 - plugins:sonarqube
 
 sonarqube:A:my count:security:generar token
+
+jenkisn:global tools configuration:sonarquebe scaner
+
+jenkins:credentials:secret(token)

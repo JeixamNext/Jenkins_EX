@@ -230,6 +230,53 @@ específico de dominio (DSL) de Pipeline.
 - instalar plugin:pipeline
 - newitem:pipeline:pipeline script:build now 
 
+interesante:
 
+- las compilaciones pueden ser ejecutadas en nodos especificos con etiquetas
+
+##################################################################################
+
+node(label:'nodo1'){
+	stage("build")
+	{
+		echo "cosas"
+	}
+
+}
+
+##################################################################################  
+
+jenkins node shh:
+
+- ajustes jenkins:nodos y cloud:crear nodo 
+- /var/jenkins_home
+- metodo:agente ssh
+
+jenkins Slave JNLP:(windows)
+
+- https://phoenixnap.com/kb/install-java-windows
+- disco_local:carpeta nueva
+# tener java
+- jenkins:ajustes jenkins:nodos y cloud:crear nodo:agente permanente(disco_local:carpeta nueva) 
+- ejecutar el agente conectandolo al controlador
+- jenkins:ajustes jenkins:seguridad global:
+-- o marcar uso d websocket al configurar el nodo
+-- copiar el .jar a la carpeta 
+-- ir a la direccion we y descargar el archivo 
+-- usar los comandos del archivo descargado en la carpeta (o en la ui de jenkins) 
+- usar label:'windows' en agent del pipeline
+
+blue ocean:
+
+- nueva interfaz para pipeline
+- plugin: blue ocean
+
+multi branch pipeline
+- crear job:multibrach pipeline:git
+- crear branchs
+- configuracion de branch:configuracion:behaviours:filtrer wildcards
+-- include: main Pro-*
+-- exclude:Dev-* pruebas-*
+-- configuracion de branch:configuracion:behaviours:wipe out repository y force clone
 
 
